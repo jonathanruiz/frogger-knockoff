@@ -15,7 +15,6 @@ class Enemy {
     this.y = this.starty;
   }
 
-  // Update the enemy's position, required method for game
   // Parameter: dt, a time delta between ticks
   update(dt) {
     // You should multiply any movement by the dt parameter
