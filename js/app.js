@@ -37,9 +37,14 @@ Enemy.prototype.render = function() {
 
 class Player { 
     constructor() {
-        this.x = 200; // x postion
-        this.y = 400; // y position
         this.sprite = 'images/char-boy.png' // sprite character
+        this.step = 101;
+        this.jump = 83;
+        this.startx = this.step * 2;
+        this.starty = (this.step * 4) - 20;
+        this.x = this.startx; // x postion
+        this.y = this.starty; // y position
+
     }
 
     update() {
@@ -58,7 +63,30 @@ class Player {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
-    // handleInput()
+    handleInput(input) {
+        switch(input) {
+            case 'left':
+                if (this.x > 0) {
+                    this.x -= this.step;
+                }
+                break;
+            case 'up':
+                if (this.y > 0) {
+                    this.y -= this.jump;
+                }
+                break;
+            case 'right':
+                if (this.x < 404) {
+                    this.x += this.step;
+                }
+                break;
+            case 'down':
+                if (this.y < this.starty) {
+                    this.y += this.jump;
+                }
+                break;
+        }
+    }
 
     // resetHero()
 }
