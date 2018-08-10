@@ -35,7 +35,7 @@ class Player {
     this.step = 101;
     this.jump = 83;
     this.startx = this.step * 2;
-    this.starty = (this.step * 4) - 20;
+    this.starty = this.jump * 5 - 20;
     this.x = this.startx; // x postion
     this.y = this.starty; // y position
   }
