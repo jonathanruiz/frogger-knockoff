@@ -90,13 +90,16 @@ class Player {
 // Place the player object in a variable called player
 
 const player = new Player();
-const bug1 = new Enemy(-101, 83, 101);
-const bug2 = new Enemy(101, 83, 101);
-const bug3 = new Enemy(-101, 83 * 2, 101 * 3);
-const bug4 = new Enemy(-101, 83 * 3, 101 * 2);
+
+// I decided to name them just to give me them a personality!
+// Pacman's ghosts have personalities and names so why no!?
+const ronny = new Enemy(-101, 83, 101);
+const carol = new Enemy(101, 83, 101);
+const alex = new Enemy(-101, 83 * 2, 101 * 3);
+const casey = new Enemy(-101, 83 * 3, 101 * 2);
 const allEnemies = [];
 
-allEnemies.push(bug1, bug2, bug3, bug4);
+allEnemies.push(ronny, carol, alex, casey);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
