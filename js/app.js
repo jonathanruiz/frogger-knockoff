@@ -2,6 +2,7 @@
 class Enemy {
   constructor() {
     this.sprite = "images/enemy-bug.png";
+    this.step = 101;
     this.x = 0;
     this.y = 0;
   }
@@ -12,11 +13,13 @@ class Enemy {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    // if the enemy is not at the end
-    // Move forward
-    // Increment x coorinate by speed * dt
-    // else
-    // Reset the enemy position to the beginning
+
+    if (this.x < 505) {
+      this.x += this.step * dt;
+    }
+    else {
+      this.x = 0;
+    }
   }
 
   // Draw the enemy on the screen, required method for game
@@ -32,7 +35,7 @@ class Player {
     this.step = 101;
     this.jump = 83;
     this.startx = this.step * 2;
-    this.starty = this.step * 4 - 20;
+    this.starty = (this.step * 4) - 20;
     this.x = this.startx; // x postion
     this.y = this.starty; // y position
   }
@@ -83,8 +86,11 @@ class Player {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-let player = new Player();
-let allEnemies = [new Enemy()];
+const player = new Player();
+const bug1 = new Enemy();
+const allEnemies = [];
+
+allEnemies.push(bug1);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
