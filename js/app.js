@@ -35,33 +35,40 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-// class Player
-    // Constructor
-        // x postion
-        // y position
-        // sprite character
+class Player { 
+    constructor() {
+        this.x = 200; // x postion
+        this.y = 400; // y position
+        this.sprite = 'images/char-boy.png' // sprite character
+    }
 
-    // render()
-        // Draw the player sprite on the right x and y coordinate
+    update() {
+        // let playerCollision = false;
 
-    // update()
-        // Update postion
-        // Check for collision
-            // Was there a collison? (Bool)
+        // while (!playerCollision) {
+        //     playerCollision = true;
+        // }
+
         // Check for winning the game
             // Did the player reach the last tile?
+        }
+
+    render() {
+        // Draw the player sprite on the right x and y coordinate
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
 
     // handleInput()
 
     // resetHero()
+}
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-// New Player object
-// Init allEnemies array
-// Player object into player
+let player = new Player();
+let allEnemies = [];
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
