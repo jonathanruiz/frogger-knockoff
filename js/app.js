@@ -1,3 +1,8 @@
+// TODO:
+// Add collision feature
+// Reset the player if collision occurs
+// Win game notification
+
 // Enemies our player must avoid
 class Enemy {
   constructor(x, y, speed) {
