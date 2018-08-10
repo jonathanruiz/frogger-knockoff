@@ -1,11 +1,11 @@
 // Enemies our player must avoid
 class Enemy {
-  constructor() {
+  constructor(y, speed) {
     this.sprite = "images/enemy-bug.png";
+    this.speed = speed;
     this.step = 101;
-    this.jump = 83;
     this.startx = -this.step;
-    this.starty = this.jump * 1 - 20;
+    this.starty = y - 20;
     this.x = this.startx;
     this.y = this.starty;
   }
@@ -18,7 +18,7 @@ class Enemy {
     // all computers.
 
     if (this.x < this.step * 5) {
-      this.x += this.step * dt;
+      this.x += this.speed * dt;
     }
     else {
       this.x = this.startx;
@@ -90,10 +90,12 @@ class Player {
 // Place the player object in a variable called player
 
 const player = new Player();
-const bug1 = new Enemy();
+const bug1 = new Enemy(83, 101);
+const bug2 = new Enemy(83 * 2, 101 / 3);
+const bug3 = new Enemy(83 * 3, 101 * 2);
 const allEnemies = [];
 
-allEnemies.push(bug1);
+allEnemies.push(bug1, bug2, bug3);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
