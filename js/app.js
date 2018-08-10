@@ -1,40 +1,33 @@
 // Enemies our player must avoid
-var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
+class Enemy {
+    constructor() {
+        this.sprite = 'images/enemy-bug.png';
+        this.x = 0;
+        this.y = 0;
+    }
 
-    // what is the x position
-    // what is the y position
+    // Update the enemy's position, required method for game
+    // Parameter: dt, a time delta between ticks
+    update(dt) {
+        // You should multiply any movement by the dt parameter
+        // which will ensure the game runs at the same speed for
+        // all computers.
 
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
-};
-
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-
-    // if the enemy is not at the end
+        // if the enemy is not at the end
         // Move forward
         // Increment x coorinate by speed * dt
-    // else
+        // else
         // Reset the enemy position to the beginning
 
-};
+    }
 
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
+    // Draw the enemy on the screen, required method for game
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+}
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
-
+// Player Class
 class Player { 
     constructor() {
         this.sprite = 'images/char-boy.png' // sprite character
@@ -96,7 +89,7 @@ class Player {
 // Place the player object in a variable called player
 
 let player = new Player();
-let allEnemies = [];
+let allEnemies = [new Enemy()];
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
