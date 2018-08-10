@@ -3,8 +3,11 @@ class Enemy {
   constructor() {
     this.sprite = "images/enemy-bug.png";
     this.step = 101;
-    this.x = 0;
-    this.y = 0;
+    this.jump = 83;
+    this.startx = -this.step;
+    this.starty = this.jump * 1 - 20;
+    this.x = this.startx;
+    this.y = this.starty;
   }
 
   // Update the enemy's position, required method for game
@@ -14,11 +17,11 @@ class Enemy {
     // which will ensure the game runs at the same speed for
     // all computers.
 
-    if (this.x < 505) {
+    if (this.x < this.step * 5) {
       this.x += this.step * dt;
     }
     else {
-      this.x = 0;
+      this.x = this.startx;
     }
   }
 
