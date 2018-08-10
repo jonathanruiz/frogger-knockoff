@@ -1,4 +1,9 @@
-// Enemies our player must avoid
+// TODO:
+// Add collision feature
+// Reset the player if collision occurs
+// Win game notification
+
+// Enemies the player must avoid
 class Enemy {
   constructor(x, y, speed) {
     this.sprite = "images/enemy-bug.png";
@@ -82,7 +87,7 @@ class Player {
     }
   }
 
-  // resetHero()
+  // resetHero() {}
 }
 
 // Now instantiate your objects.
