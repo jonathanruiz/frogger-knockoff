@@ -67,7 +67,7 @@ class Player {
         }
         break;
       case "right":
-        if (this.x < 404) {
+        if (this.x < this.step * 4) {
           this.x += this.step;
         }
         break;
