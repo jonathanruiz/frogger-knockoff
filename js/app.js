@@ -6,7 +6,7 @@
 // Enemies the player must avoid
 class Enemy {
   constructor(x, y, speed) {
-    this.sprite = "images/enemy-bug.png";
+    this.sprite = 'images/enemy-bug.png';
     this.speed = speed;
     this.step = 101;
     this.startx = -101;
@@ -23,8 +23,7 @@ class Enemy {
 
     if (this.x < this.step * 5) {
       this.x += this.speed * dt;
-    }
-    else {
+    } else {
       this.x = this.startx;
     }
   }
@@ -38,7 +37,7 @@ class Enemy {
 // Player Class
 class Player {
   constructor() {
-    this.sprite = "images/char-boy.png"; // sprite character
+    this.sprite = 'images/char-boy.png'; // sprite character
     this.step = 101;
     this.jump = 83;
     this.startx = this.step * 2;
@@ -47,14 +46,14 @@ class Player {
     this.y = this.starty; // y position
   }
 
-  update() {
-    // let playerCollision = false;
-    // while (!playerCollision) {
-    //     playerCollision = true;
-    // }
-    // Check for winning the game
-    // Did the player reach the last tile?
-  }
+  // update() {
+  //   // let playerCollision = false;
+  //   // while (!playerCollision) {
+  //   //     playerCollision = true;
+  //   // }
+  //   // Check for winning the game
+  //   // Did the player reach the last tile?
+  // }
 
   render() {
     // Draw the player sprite on the right x and y coordinate
@@ -63,25 +62,27 @@ class Player {
 
   handleInput(input) {
     switch (input) {
-      case "left":
+      case 'left':
         if (this.x > 0) {
           this.x -= this.step;
         }
         break;
-      case "up":
+      case 'up':
         if (this.y > 0) {
           this.y -= this.jump;
         }
         break;
-      case "right":
+      case 'right':
         if (this.x < this.step * 4) {
           this.x += this.step;
         }
         break;
-      case "down":
+      case 'down':
         if (this.y < this.starty) {
           this.y += this.jump;
         }
+        break;
+      default:
         break;
     }
   }
@@ -107,12 +108,12 @@ allEnemies.push(ronny, carol, alex, casey);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
-document.addEventListener("keyup", function(e) {
-  var allowedKeys = {
-    37: "left",
-    38: "up",
-    39: "right",
-    40: "down"
+document.addEventListener('keyup', (e) => {
+  const allowedKeys = {
+    37: 'left',
+    38: 'up',
+    39: 'right',
+    40: 'down',
   };
 
   player.handleInput(allowedKeys[e.keyCode]);

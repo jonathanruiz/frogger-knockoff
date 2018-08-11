@@ -1,0 +1,24 @@
+{
+  "name": "frogger-knockoff",
+  "version": "1.0.0",
+  "description": "A knockoff version of the arcade game, Frogger.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanruiz/frogger-knockoff.git"
+  },
+  "author": "Jonathan Ruiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathanruiz/frogger-knockoff/issues"
+  },
+  "homepage": "https://github.com/jonathanruiz/frogger-knockoff#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0"
+  }
+}
