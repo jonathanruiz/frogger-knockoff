@@ -46,14 +46,22 @@ class Player {
     this.y = this.starty; // y position
   }
 
-  // update() {
-  //   // let playerCollision = false;
-  //   // while (!playerCollision) {
-  //   //     playerCollision = true;
-  //   // }
-  //   // Check for winning the game
-  //   // Did the player reach the last tile?
-  // }
+  update() {
+    // If collision occurs
+    for (const enemy of allEnemies) {
+      if (
+        this.y === enemy.y
+        && (enemy.x + enemy.step / 2 > this.x && enemy.x < this.x + this.step / 2)
+      ) {
+        this.resetPlayer();
+      }
+    }
+
+    // If you win the game
+    if (this.y < 53) {
+      console.log('You win!');
+    }
+  }
 
   render() {
     // Draw the player sprite on the right x and y coordinate
@@ -87,7 +95,10 @@ class Player {
     }
   }
 
-  // resetHero() {}
+  resetPlayer() {
+    this.x = this.startx;
+    this.y = this.starty;
+  }
 }
 
 // Now instantiate your objects.
