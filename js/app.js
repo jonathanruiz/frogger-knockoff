@@ -1,8 +1,3 @@
-// TODO:
-// Add collision feature
-// Reset the player if collision occurs
-// Win game notification
-
 // Enemies the player must avoid
 class Enemy {
   constructor(x, y, speed) {
@@ -44,6 +39,7 @@ class Player {
     this.starty = this.jump * 5 - 20;
     this.x = this.startx; // x postion
     this.y = this.starty; // y position
+    this.victory = false;
   }
 
   update() {
@@ -59,7 +55,7 @@ class Player {
 
     // If you win the game
     if (this.y < 53) {
-      console.log('You win!');
+      this.victory = true;
     }
   }
 
